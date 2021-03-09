@@ -1,0 +1,33 @@
+reader:
+  nsog:
+    data_dir: './data'
+    detections_csv: nsog_detections_jan2018.csv
+    vendor_tag_specs: nsog_tags.xlsx
+data:
+  sources:
+    load_wavedir: 'era5'
+    load_waveheight: 'era5'
+    load_waveperiod: 'era5'
+    load_wind_uv: 'era5'
+    load_wind_u: 'era5'
+    load_wind_v: 'era5'
+bounds:
+  description: Northern Straight of Georgia (NSOG)
+  start: 2018-01-01
+  end: 2018-02-01
+  lat_center: 49.7231
+  lon_center: -124.6858
+  n_offset: 0.5 #0.015
+  s_offset: 0.5 #0.015
+  e_offset: 1 #0.05
+  w_offset: 1 #0.03
+file_map:
+  data_dir: '{repo_path}/tutorials/NSOG_Jan2018/data/SalishSeaCast'
+  uVelocity: uVelocity_2018-01-01_2018-02-01.nc
+  vVelocity: vVelocity_2018-01-01_2018-02-01.nc
+  wVelocity: wVelocity_2018-01-01_2018-02-01.nc
+  salinity: salinity_2018-01-01_2018-02-01.nc
+  temperature: temperature_2018-01-01_2018-02-01.nc
+  fraserTurbidity: fraserTurbidity_2018-01-01_2018-02-01.nc
+  mesozooplankton: mesozooplankton_2018-01-01_2018-02-01.nc
+  microzooplankton: microzooplankton_2018-01-01_2018-02-01.nc
