@@ -1,2 +1,8 @@
 *.ipynb_checkpoints*
+.DS_Store
 
+# Don't Track Data
+*.nc
+*.csv
+*.xlsx
+*.xlsb
