@@ -4,5 +4,6 @@
 # Don't Track Data
 *.nc
 *.csv
-*.xlsx
-*.xlsb
+*.xls*
+*.xls*
+*.ods
