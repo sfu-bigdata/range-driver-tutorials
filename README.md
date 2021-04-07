@@ -13,9 +13,9 @@ As entry points to working with this library, consider the [quick start guide](#
 
 The analysis methods provided in this toolkit are structured as stages of data preparation, fetching of environmental variables, processing and calculation of derived variables, and exploratory data analysis.  
 Details about functions in this toolkit are avilable in the [API reference](https://sfu-bigdata.github.io/range-driver).
-To learn about relevant functions we show their use within practical workflows, denoting a mix of manual steps and automated processing, that can be run in a reproducible manner by capturing the setup with pieces of code and configuration text files. The result of such a workflow is a configured processing pipeline that produces a report with analysis details and generated figures that could involve further user interaction, e.g. to switch between overview and detail-on-demand.
+To learn about relevant functions see their use in practical workflows provided as tutorial notebooks. A workflow denotes a mix of manual and automated steps that can be run in a reproducible manner by capturing their setup with pieces of code and configuration text files. The result of such a workflow is a processing pipeline that produces a report with analysis details and generated figures that could involve further user interaction.
 
-To construct such reports from the raw source data, range-driver provides a suite of [building blocks](#blocks):
+To construct such reports from the raw input data, range-driver provides a suite of [building blocks](#blocks):
 
 * [Study setup and configuration](#configuration)
   * Manage and adjust [configuration options](#configuration) for data sources, processing, and analysis
