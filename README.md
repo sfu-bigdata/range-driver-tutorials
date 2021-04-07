@@ -1,13 +1,13 @@
-# Tutorials for `range-driver` Acoustic Telemetry Analysis
+# Range-driver Acoustic Telemetry Analysis Tutorials
 
-This repository contains tutorials & demonstration notebooks illustrating how the [range-driver](https://github.com/sfu-bigdata/range-driver) acoustic telemetry toolkit can help to answer the question: What factors drive the underwater acoustic transmitter detection range in the context of a specific field study.
+This repository contains tutorials & demonstration notebooks illustrating how the [range-driver](https://github.com/sfu-bigdata/range-driver) acoustic telemetry toolkit can help to answer what factors drive the underwater acoustic transmitter detection range in the context of a specific field study.
 
-Since field study data is usually located with researchers who plan and conduct field experiments, goals of this tools are to:
-* run on researcher's desktops, where this acoustic telemetry data is available, 
+Since field study data is usually located with researchers who plan and conduct field experiments, the goals of this tools are to:
+* run on researcher's desktops where acoustic telemetry data is available, 
 * collect further relevant data of environmental conditions from external data sources, and 
-* provide standard analysis methods, supported by data visualization that are applicable to a variety of possibly unique study settings.
+* provide data analysis and visualization methods that can be tailored for unique study settings.
 
-As entry points to using this library, consider the [quick start guide](#quick-start), [range test use cases](#use-cases) with field-study detection data, or the following description of the overall workflow structure.
+As entry points to working with this library, consider the [quick start guide](#quick-start), [range test use cases](#use-cases) with field-study detection data, or the description of the overall workflow structure.
 
 ## Range test analysis workflow
 
