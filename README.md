@@ -2,21 +2,20 @@
 
 This repository contains tutorials & demonstration notebooks illustrating how the [range-driver](https://github.com/sfu-bigdata/range-driver) acoustic telemetry toolkit can help to answer what factors drive the underwater acoustic transmitter detection range in the context of a specific field study.
 
-Since field study data is usually located with researchers who plan and conduct field experiments, the goals of this tools are to:
-* run on researcher's desktops where acoustic telemetry data is available, 
+Since field study data is usually located with researchers who plan and conduct field experiments, the goals of this tool are to:
+* run on researchers' desktops where acoustic telemetry data is available, 
 * collect further relevant data of environmental conditions from external data sources, and 
 * provide data analysis and visualization methods that can be tailored for unique study settings.
 
-As entry points to working with this library, consider the [quick start guide](#quick-start), [range test use cases](#use-cases) with field-study detection data, or the description of the overall workflow structure.
+As entry points to working with this library, consider the [quick start guide](#quick-start), [range test field study use cases](#use-cases), or the following workflow description.
 
 ## Range test analysis workflow
 
-The analysis methods provided in this toolkit are structured along stages of data preparation, processing, and exploratory data analysis. 
-Detail documentation of toolkit functions are given in the [API reference](https://sfu-bigdata.github.io/range-driver).
+The analysis methods provided in this toolkit are structured as stages of data preparation, fetching of environmental variables, processing and calculation of derived variables, and exploratory data analysis.  
+Details about functions in this toolkit are avilable in the [API reference](https://sfu-bigdata.github.io/range-driver).
+To learn about relevant functions we show their use within practical workflows, denoting a mix of manual steps and automated processing, that can be run in a reproducible manner by capturing the setup with pieces of code and configuration text files. The result of such a workflow is a configured processing pipeline that produces a report with analysis details and generated figures that could involve further user interaction, e.g. to switch between overview and detail-on-demand.
 
-A workflow involves a mix of manual steps and automated processing, and is made reproducible by capturing the analysis study setup in pieces of code and configuration text files.
-
-Main [building blocks](#blocks) of range driver analysis workflows are:
+To construct such reports from the raw source data, range-driver provides a suite of [building blocks](#blocks):
 
 * [Study setup and configuration](#configuration)
   * Manage and adjust [configuration options](#configuration) for data sources, processing, and analysis
