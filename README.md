@@ -1,40 +1,63 @@
-# Range Driver - Acoustic Telemetry Analysis
+# Tutorials for `range-driver` Acoustic Telemetry Analysis
 
-This repository contains tutorials & demonstration notebooks illustrating how the [range-driver](https://github.com/sfu-bigdata/range-driver) acoustic telemetry toolkit can assist in analyzing what factors drive an underwater acoustic transmitter's detection range.
+This repository contains tutorials & demonstration notebooks illustrating how the [range-driver](https://github.com/sfu-bigdata/range-driver) acoustic telemetry toolkit can help to answer the question: What factors drive the underwater acoustic transmitter detection range in the context of a specific field study.
+
+Since field study data is usually located with researchers who plan and conduct field experiments, goals of this tools are to:
+* run on researcher's desktops, where this acoustic telemetry data is available, 
+* collect further relevant data of environmental conditions from external data sources, and 
+* provide standard analysis methods, supported by data visualization that are applicable to a variety of possibly unique study settings.
+
+As entry points to using this library, consider the [quick start guide](#quick-start), [range test use cases](#use-cases) with field-study detection data, or the following description of the overall workflow structure.
 
 ## Range test analysis workflow
 
-The analysis methods provided in this toolkit are structured along different stages of data preparation and hypothesis generation. The basic steps are:
+The analysis methods provided in this toolkit are structured along stages of data preparation, processing, and exploratory data analysis. 
+Detail documentation of toolkit functions are given in the [API reference](https://sfu-bigdata.github.io/range-driver).
 
-* Study setup
-  * Etablish folder and file structure for detection and environmental data sources
-  * Manage and adjust configuration options for data sources, processing, and analysis
-* Load detection events and metdata about transmitter/receiver deployment
-* Calculate detection rates for each observed transmitter/receiver combination
+A workflow involves a mix of manual steps and automated processing, and is made reproducible by capturing the analysis study setup in pieces of code and configuration text files.
+
+Main [building blocks](#blocks) of range driver analysis workflows are:
+
+* [Study setup and configuration](#configuration)
+  * Manage and adjust [configuration options](#configuration) for data sources, processing, and analysis
+  * Know [which files and field names](#field-names) are expected to contain specific information for the [data loader](#detection-loader) and other processing modules
+* [Load detection events and metdata](#detection-loader) including information on transmitter/receiver deployment
+* [Calculate detection rates](#detection-rates) for each observed transmitter/receiver combination
   * View and verify detection events and rates
-  * Confirm proper study setup
-* Combine detections with environmental data
-  * Determine a region of interest in latitude, longitude, and applicable time range
-  * Download data from third-party data sources via `kadlu`
-  * Import custom data sources from NetCDF files
-  * Obtain tidal data
-* Invoke different views and visualizations to study relationships among variables and their effect on variation in detection performance
-* Work with the combined dataframe of detection and environmental data to perform custom analyses and model building
+  * Confirm proper data configuration
+* Combine detections with [environmental data](#envos)
+  * Determine a [region of interest in latitude, longitude, and time range](#roi)
+  * Download data from [third-party data sources](#envos) via `kadlu`
+  * Import [custom data sources](#custom-data), NetCDF files
+  * Obtain [tidal data](#tidal-data)
+* Invoke different views and [visualizations to study relationships](#analysis) among variables and their effect on variation in detection performance
+* Perform further analyses and model building using the combined dataframe of detection and environmental data, consider event-based, and aggregation in time bins. Detailed examples are provided in our collection of [use cases](#use-cases).
 
-As a starting point, adopt a pre-configured setup and then fine-tune parameters of different stages of the overall data gathering and analysis pipeline.
-Beyond that, it is possible to add custom processing steps and visualizations. Once detections and environmental data are combined in one dataframe, pursue further ad-hoc analysis, for instance, using Jupyter notebooks.
+## <a name="quick-start"></a>Quick start guide
 
-## Quick Start Guide
+TODO: entry-level examples of loading data from scratch with a small example
 
-## Building blocks
+## <a name="blocks"></a>Building blocks of the workflow
 
-### Configuration
+To start, adopt a pre-configured setup and adjust the configuration of different stages, such as input file paths, and parameters of the data gathering and analysis pipeline.  
+For more detailed study, add custom processing steps and visualizations. Once detections and environmental data are combined in one dataframe, further ad-hoc analysis can happen in scripts or Jupyter notebooks using Python or R.
 
-YAML configuration in layers: system defaults, view settings (merge with system?), study specific
+### <a name="configuration"></a> Study setup - manage configuration options
+
+Configuration options for data sources, processing, and analysis are organized in YAML files, text files that contain `key: value` pairs of strings, numbers, and lists, where keys can be nested via indentation, to organize information hierarchically. The main-level keys of such a file are:
+* `reader`
+* `data`
+* etc.
 
 TODO: documentation of all config options: establish cenral .rst for config options
 
-### Field names used in the analysis
+To separate the definitions of default values and study specific settings, configurations can be loaded in layers, where a later file can update settings from an earlier file. It is also possible to merge all information into a single config file, if that is preferred.
+
+YAML configuration in layers: system defaults, view settings (merge with system?), study specific
+
+Etablish folder and file structure for detection and environmental data sources
+
+### <a name="field-names"></a>Field names used in the analysis
 
 Field names (e.g. lat lon), configurability, and documentation
 
@@ -43,18 +66,55 @@ environmental data: kadlu (lightweight discussion, point to kadlu docs), netcdf 
 Low-level loading (load netcdf, do own interpolation), brief version (just use the config file)
 what happens if my data is not netcdf or kadlu?
 
-### Further stages
+TODO: The bullets in the workflow above to add further detail component sections (partly done)
 
-TODO: The bullets in the workflow above to add further detail component sections
+### <a name="detection-loader"></a> Detection data loaders
 
-## Use Cases
+See [use cases](#use-cases) for examples on the OTN format and NSOG study.
+
+### <a name="detection-rates"></a> Calculate detection rates
+
+* View and verify detection events and rates
+* Confirm proper data configuration
+
+### <a name="roi"></a>Region of interest in latitude, longitude, and time range
+
+### <a name="envos"></a>Fetch environmental variables
+
+Combine detections with environmental data  
+Download data from third-party data sources via `kadlu`
+
+### <a name="custom-data"></a>Custom data sources, CSV, NetCDF, etc.
+
+Import custom data sources, NetCDF files
+
+### <a name="tidal"></a> 
+
+Obtain tidal heights either via API access or by interpolation of tidal time tables
+
+### <a name="analysis"></a>Data visualization and EDA
+
+Invoke different views and visualizations to study relationships among variables and their effect on variation in detection performance
+
+Perform further analyses and model building using the combined dataframe of detection and environmental data, consider event-based, as well as, aggregation within time windows, e.g. as used to compute detection rates
+
+## <a name="use-cases"></a> Use Cases
 
 Goals, Methods, Results
 
 ### Mahone Bay
 
-detection setup,
-envos,
+**Range test study setup**  
+deployment info in OTN metadata format  
+coverage of the data:
+* transmitter and receiver types and settings
+* location, time range
+* number of detections
+TODO: These details would be provided in a notebook section.
+
+**Environment variables**
+
+**Results**  
 bi-variate distribution plots of DR vs. water velocity
 
 ### Georgia Straight
