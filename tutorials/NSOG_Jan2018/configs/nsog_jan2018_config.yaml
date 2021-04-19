@@ -1,6 +1,6 @@
 reader:
   nsog:
-    data_dir: './data'
+    data_dir: '{repo_path}/data/NSOG_Jan2018'
     detections_csv: nsog_detections_jan2018.csv
     vendor_tag_specs: nsog_tags.xlsx
 data:
@@ -22,12 +22,11 @@ bounds:
   e_offset: 1 #0.05
   w_offset: 1 #0.03
 file_map:
-  data_dir: '{repo_path}/tutorials/NSOG_Jan2018/data/SalishSeaCast'
+  data_dir: '{repo_path}/data/NSOG_Jan2018/SalishSeaCast'
   uVelocity: uVelocity_2018-01-01_2018-02-01.nc
   vVelocity: vVelocity_2018-01-01_2018-02-01.nc
   wVelocity: wVelocity_2018-01-01_2018-02-01.nc
   salinity: salinity_2018-01-01_2018-02-01.nc
   temperature: temperature_2018-01-01_2018-02-01.nc
   fraserTurbidity: fraserTurbidity_2018-01-01_2018-02-01.nc
-  mesozooplankton: mesozooplankton_2018-01-01_2018-02-01.nc
-  microzooplankton: microzooplankton_2018-01-01_2018-02-01.nc
+

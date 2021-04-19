@@ -1,6 +1,6 @@
 reader:
   otn:
-    data_dir: '{repo_path}/tutorials/MahoneBay2016/data'
+    data_dir: '{repo_path}/data/MahoneBay2016/'
     detections_csv: range_test_raw.csv
     otn_metadata: metadata-from-initial-range-test.xls
     vendor_tag_specs: tag-summary-mahone-bay-range-test.xls
@@ -29,16 +29,16 @@ data:
     load_wind_u: 'era5'
     load_wind_v: 'era5'
   tidal:
-    tidal_times_ods: '{repo_path}/tutorials/MahoneBay2016/data/TidalTimes/Extracted_tidal_times_for_Halifax_2016_2sheets.ods'
-    tidal_times_output_csv: "{repo_path}/tutorials/MahoneBay2016/data/TidalTimes/output_tidal_times_for_Halifax_2016_flat.csv"
-    tidal_interpolation_output_csv: "{repo_path}/tutorials/MahoneBay2016/data/TidalTimes/output_tidal_times_for_Halifax_2016_5min.csv"
+    tidal_times_ods: '{repo_path}/data/MahoneBay2016/TidalTimes/Extracted_tidal_times_for_Halifax_2016_2sheets.ods'
+    tidal_times_output_csv: "{repo_path}/data/MahoneBay2016/TidalTimes/output_tidal_times_for_Halifax_2016_flat.csv"
+    tidal_interpolation_output_csv: "{repo_path}/data/MahoneBay2016/TidalTimes/output_tidal_times_for_Halifax_2016_5min.csv"
     year: 2016
   calculated_columns:
   - water_vel
   - water_vel_bottom
 
 file_map:
-  data_dir: '{repo_path}/tutorials/MahoneBay2016/data/HYCOM'
+  data_dir: '{repo_path}/data/MahoneBay2016/HYCOM'
   salinity_bottom: bottom_sal_20160309_20160404_expt_56.3.nc
   salinity: column_sal_20160309_20160404_expt_56.3.nc
   water_v: column_v_vel_20160309_20160404_expt_56.3.nc
