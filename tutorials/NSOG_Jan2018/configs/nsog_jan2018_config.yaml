@@ -18,9 +18,9 @@ bounds:
   lat_center: 49.7231
   lon_center: -124.6858
   n_offset: 0.5 #0.015
-  s_offset: 0.5 #0.015
-  e_offset: 1 #0.05
-  w_offset: 1 #0.03
+  s_offset: 0.4 #0.015
+  e_offset: 0.5 #0.05
+  w_offset: 0.5 #0.03
 file_map:
   data_dir: '{repo_path}/data/NSOG_Jan2018/SalishSeaCast'
   uVelocity: uVelocity_2018-01-01_2018-02-01.nc
