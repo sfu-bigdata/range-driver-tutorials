@@ -3,8 +3,8 @@ reader:
     data_dir: '{repo_path}/data/NSOG_Jan2018'
     detections_csv: nsog_detections_jan2018.csv
     vendor_tag_specs: nsog_tags.xlsx
-# data:
-#   sources:
+data:
+  sources:
 #     load_wavedir: 'era5'
 #     load_waveheight: 'era5'
 #     load_waveperiod: 'era5'
